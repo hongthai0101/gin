@@ -1,0 +1,21 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /swagger/*any             --> github.com/swaggo/gin-swagger.CustomWrapHandler.func1 (2 handlers)
+[GIN-debug] POST   /login                    --> github.com/hongthai0101/golang-gin/controllers.(*AuthController).Login-fm (4 handlers)
+[GIN-debug] POST   /signup                   --> github.com/hongthai0101/golang-gin/controllers.(*AuthController).Signup-fm (4 handlers)
+[GIN-debug] GET    /profile                  --> github.com/hongthai0101/golang-gin/controllers.(*AuthController).Profile-fm (4 handlers)
+[GIN-debug] POST   /foods                    --> github.com/hongthai0101/golang-gin/controllers.(*FoodController).Save-fm (4 handlers)
+[GIN-debug] GET    /foods                    --> github.com/hongthai0101/golang-gin/controllers.(*FoodController).Find-fm (4 handlers)
+[GIN-debug] DELETE /foods/:id                --> github.com/hongthai0101/golang-gin/controllers.(*FoodController).Delete-fm (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2021/04/09 - 17:08:34 | 200 |     522.449µs |             ::1 | GET      "/swagger/index.html"
+[GIN] 2021/04/09 - 17:08:34 | 200 |      404.68µs |             ::1 | GET      "/swagger/swagger-ui.css"
+[GIN] 2021/04/09 - 17:08:34 | 200 |     441.702µs |             ::1 | GET      "/swagger/swagger-ui-standalone-preset.js"
+[GIN] 2021/04/09 - 17:08:34 | 200 |    7.276736ms |             ::1 | GET      "/swagger/swagger-ui-bundle.js"
+[GIN] 2021/04/09 - 17:08:34 | 200 |      77.898µs |             ::1 | GET      "/swagger/swagger-ui.css.map"
+[GIN] 2021/04/09 - 17:08:35 | 200 |    8.297123ms |             ::1 | GET      "/swagger/swagger-ui-standalone-preset.js.map"
+[GIN] 2021/04/09 - 17:08:35 | 200 |   29.778892ms |             ::1 | GET      "/swagger/swagger-ui-bundle.js.map"
+[GIN] 2021/04/09 - 17:08:35 | 200 |     473.879µs |             ::1 | GET      "/swagger/doc.json"
+[GIN] 2021/04/09 - 17:08:35 | 200 |    4.154361ms |             ::1 | GET      "/swagger/favicon-32x32.png"

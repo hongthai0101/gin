@@ -1,0 +1,114 @@
+basePath: /v2
+definitions:
+  entity.CreateUser:
+    properties:
+      email:
+        example: test@gmail.com
+        type: string
+      name:
+        example: test
+        minLength: 4
+        type: string
+    required:
+    - email
+    type: object
+  entity.User:
+    properties:
+      created_at:
+        type: string
+      email:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      updated_at:
+        type: string
+      verifiedAt:
+        type: string
+    required:
+    - email
+    - name
+    - password
+    type: object
+  entity.UserList:
+    properties:
+      user:
+        items:
+          $ref: '#/definitions/entity.User'
+        type: array
+    type: object
+  types.Swagger:
+    properties:
+      httpError:
+        $ref: '#/definitions/types.httpError'
+    type: object
+  types.httpError:
+    properties:
+      code:
+        example: 400
+        type: integer
+      message:
+        example: status bad request
+        type: string
+    type: object
+host: petstore.swagger.io
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /user/:
+    post:
+      consumes:
+      - application/json
+      description: create a new user
+      parameters:
+      - description: create user
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/entity.CreateUser'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/types.Swagger'
+      summary: create user
+      tags:
+      - user
+  /users/:
+    get:
+      description: list all the users based on filter given
+      parameters:
+      - description: q
+        in: query
+        name: q
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.UserList'
+      summary: List users
+      tags:
+      - user
+swagger: "2.0"
